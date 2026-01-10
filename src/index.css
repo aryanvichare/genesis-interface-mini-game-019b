@@ -77,3 +77,89 @@
   background-color: #3b82f6;
   color: white;
 }
+
+/* Particle explosion animation */
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 0), var(--ty, 0)) scale(0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 0.6s ease-out forwards;
+}
+
+/* Power-up glow animation */
+@keyframes powerup-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+  }
+}
+
+.powerup-glow {
+  animation: powerup-glow 1.5s ease-in-out infinite;
+}
+
+/* Screen shake for hits */
+@keyframes screen-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.screen-shake {
+  animation: screen-shake 0.2s ease-in-out;
+}
+
+/* Rapid fire animation */
+@keyframes rapid-fire {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.rapid-fire {
+  animation: rapid-fire 0.1s infinite;
+}
+
+/* Shield effect */
+@keyframes shield-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
+
+.shield-effect {
+  animation: shield-pulse 2s infinite;
+}
+
+/* Background animations */
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(var(--particle-dx, 0), var(--particle-dy, 0)) scale(1.2); }
+}
+
+@keyframes bar-pulse {
+  0%, 100% { height: 30%; opacity: 0.3; }
+  50% { height: 80%; opacity: 0.6; }
+}

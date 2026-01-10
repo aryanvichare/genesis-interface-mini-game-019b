@@ -4,6 +4,7 @@ import GameCartridgeSlot from './components/GameCartridgeSlot';
 import GameSelectScreen from './components/GameSelectScreen';
 import MiniGame from './components/MiniGame';
 import GenesisConsole from './components/GenesisConsole';
+import BlastBackground from './components/BlastBackground';
 
 type Game = {
   id: number;
@@ -92,6 +93,9 @@ function App() {
           }}></div>
         </div>
       )}
+
+      {/* Blast Processing Background Effect */}
+      <BlastBackground powerOn={powerOn} />
 
       {/* Header with Sega Genesis branding */}
       <header className="p-6 border-b-2 border-gray-800">
